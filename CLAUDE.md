@@ -14,4 +14,4 @@ Single app folder `workFromAlmostAnywhereTggithubdemo_nkzjqw/` — see `README.m
 - Keep secrets out of the repo (`.env` gitignored); app files carry no credentials — keep it that way when adding API endpoints/orchestrations.
 
 ## Last turn / Pending (2026-08-28)
-Initialized git and published the app to GitHub as a private repo `workFromAlmostAnywhereTggithubdemo_nkzjqw` under `gilfila`, with README/CLAUDE.md/.gitignore added. Secrets/PII sweep was clean. **Pending:** nothing open; flip the repo to public if Tony wants it shareable.
+Initialized git and published the app to GitHub as a private repo `workFromAlmostAnywhereTggithubdemo_nkzjqw` under `gilfila`, with README/CLAUDE.md/.gitignore added. Secrets/PII sweep was clean. Then added a sample **About page** (`presentation/about.pmd`, routed at `/about` via the AMD) on branch `feature/about-page`, pushed to GitHub. **Pending:** open/merge the PR for `feature/about-page` (this CLAUDE.md update is uncommitted on that branch); flip the repo to public if Tony wants it shareable.
