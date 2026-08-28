@@ -22,7 +22,7 @@ jobs:
           WDCLI_CLIENT_SECRET: ${{ secrets.WDCLI_CLIENT_SECRET }}
 
       - name: Upload app to App Hub
-        run: bin/wdcli/bin/wdcli app upload workFromAlmostAnywhereTggithubdemo_nkzjqw --account ${{ vars.WDCLI_ACCOUNT }} --ci
+        run: bin/wdcli/bin/wdcli app upload workFromAlmostAnywhereOdzimjz_svfbfp --account ${{ vars.WDCLI_ACCOUNT }} --ci
 
       # App deploy to the tenant is not automated here: wdcli (1.7.25) requires a
       # tenanted access token for `app deploy`, and `wdcli tenant login` only
