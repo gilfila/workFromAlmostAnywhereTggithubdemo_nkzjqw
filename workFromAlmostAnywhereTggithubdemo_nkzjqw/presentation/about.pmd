@@ -1,0 +1,50 @@
+{
+  "id": "about",
+  "securityDomains": [
+    "RemoteWorkSelfService"
+  ],
+  "presentation": {
+    "title": {
+      "type": "title",
+      "label": "About This App"
+    },
+    "body": {
+      "type": "section",
+      "children": [
+        {
+          "type": "richText",
+          "id": "aboutIntro",
+          "value": "<p style=\"text-align:left\"><span style=\"font-size:16px; color:black;\">Work From Almost Anywhere lets employees request permission to work remotely from around the globe, and lets managers review and approve those requests.</span></p>"
+        },
+        {
+          "type": "section",
+          "title": "What you can do here",
+          "children": [
+            {
+              "type": "readOnlyText",
+              "value": "Submit a remote work request with your destination country and date range."
+            },
+            {
+              "type": "readOnlyText",
+              "value": "Track your remaining remote work day balance and see when it resets."
+            },
+            {
+              "type": "readOnlyText",
+              "value": "View your requests on a calendar and follow their approval status."
+            }
+          ]
+        },
+        {
+          "type": "button",
+          "id": "backHome",
+          "label": "Return to the Home Page",
+          "taskReference": {
+            "type": "taskReference",
+            "taskId": "requestHub"
+          },
+          "action": "AUXILIARY"
+        }
+      ]
+    }
+  }
+}
