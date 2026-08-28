@@ -1,0 +1,35 @@
+name: Deploy on Merge
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Extract wdcli
+        run: |
+          tar -xzf bin/wdcli-installer-linux-x64-v1.7.25.tar.gz -C bin/
+          chmod +x bin/wdcli/bin/wdcli
+      - name: Authenticate
+        run: bin/wdcli/bin/wdcli auth login --system-user
+        env:
+          WDCLI_CLIENT_ID: ${{ secrets.WDCLI_CLIENT_ID }}
+          WDCLI_CLIENT_SECRET: ${{ secrets.WDCLI_CLIENT_SECRET }}
+
+      - name: Upload app to App Hub
+        run: bin/wdcli/bin/wdcli app upload localdisk_nkzjqw --account ${{ vars.WDCLI_ACCOUNT }} --ci
+
+      # App deploy to the tenant is not automated here: wdcli (1.7.25) requires a
+      # tenanted access token for `app deploy`, and `wdcli tenant login` only
+      # supports an interactive browser PKCE flow — it cannot run headless in CI.
+      # Deploy the uploaded version from App Hub, or locally via:
+      #   wdcli tenant login <alias> && wdcli app deploy localdisk_nkzjqw --latest-version
+
+      - name: Logout
+        if: always()
+        run: bin/wdcli/bin/wdcli auth logout || true
