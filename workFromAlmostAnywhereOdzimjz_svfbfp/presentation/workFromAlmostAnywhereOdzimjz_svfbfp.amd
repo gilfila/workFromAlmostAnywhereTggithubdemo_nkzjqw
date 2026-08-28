@@ -195,16 +195,9 @@
       "page": {
         "id": "manageRequestsCard"
       }
-    },
-    {
-      "id": "about",
-      "routingPattern": "/about",
-      "page": {
-        "id": "about"
-      }
     }
   ],
-  "applicationId": "workFromAlmostAnywhereTggithubdemo_nkzjqw",
+  "applicationId": "workFromAlmostAnywhereOdzimjz_svfbfp",
   "dataProviders": [
     {
       "key": "workday-staffing",
